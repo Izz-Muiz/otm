@@ -11,12 +11,45 @@ class Auth extends CI_Controller
 	}
 	public function index()
 	{
-		$this->load->view('auth/login');
+		$this->login();
 	}
 
 	public function login()
 	{
-		$this->load->view('auth/login');
+		// set validation rules
+		$this->form_validation->set_rules('username', 'Username', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required');
+
+		if ($this->form_validation->run()) {
+			// get input data
+			$username = $this->input->post('username');
+			$password = $this->input->post('password');
+
+			// check username exists
+			$user = $this->User_model->login($username);
+			if ($user) {
+				// check if password matches
+				if (password_verify($password, $user->password)) {
+					// create user session
+					$this->session->set_userdata('logged_in', true);
+					$this->session->set_userdata('user_id', $user->id);
+					$this->session->set_userdata('username', $user->username);
+
+					// redirect to dashboard
+					redirect('dashboard');
+				} else {
+					$this->session->set_flashdata('errorLogin', 'Invalid Password. PLease try again.');
+				}
+			} else {
+				$this->session->set_flashdata('errorLogin', 'User not found. Please check your username.');
+			}
+		}
+
+		$data['validation_errors'] = validation_errors();
+
+		$this->load->view('templates/header');
+		$this->load->view('auth/login', $data);
+		$this->load->view('templates/footer');
 	}
 
 
@@ -47,10 +80,10 @@ class Auth extends CI_Controller
 			$result = $this->User_model->register($data);
 
 			if ($result == true) {
-				$this->session->set_flashdata('success', 'Registration successful! You can now log in.');
+				$this->session->set_flashdata('successRegister', 'Registration successful! You can now log in.');
 				redirect('auth/login');
 			} else {
-				$this->session->set_flashdata('error', 'Registration failed! Please try again.');
+				$this->session->set_flashdata('errorRegister', 'Registration failed! Please try again.');
 				redirect('auth/register');
 			}
 		}

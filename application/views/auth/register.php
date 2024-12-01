@@ -15,9 +15,9 @@
 		<div class="card-header">
 			<h1>Register</h1>
 		</div>
-		<?php if ($this->session->flashdata('error')): ?>
+		<?php if ($this->session->flashdata('errorRegister')): ?>
 			<div class="alert alert-danger mt-3">
-				<?php echo $this->session->flashdata('error'); ?>
+				<?php echo $this->session->flashdata('errorRegister'); ?>
 			</div>
 		<?php endif; ?>
 		<div class="card-body">
