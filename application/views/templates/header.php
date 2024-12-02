@@ -9,11 +9,11 @@
 		name="viewport" />
 	<link
 		rel="icon"
-		href="assets/img/kaiadmin/favicon.ico"
+		href="<?= base_url('assets/img/kaiadmin/favicon.ico'); ?>"
 		type="image/x-icon" />
 
 	<!-- Fonts and icons -->
-	<script src="assets/js/plugin/webfont/webfont.min.js"></script>
+	<script src="<?= base_url('assets/js/plugin/webfont/webfont.min.js'); ?>"></script>
 	<script>
 		WebFont.load({
 			google: {
@@ -26,7 +26,7 @@
 					"Font Awesome 5 Brands",
 					"simple-line-icons",
 				],
-				urls: ["assets/css/fonts.min.css"],
+				urls: ["<?= base_url('assets/css/fonts.min.css'); ?>"],
 			},
 			active: function() {
 				sessionStorage.fonts = true;
@@ -35,12 +35,12 @@
 	</script>
 
 	<!-- CSS Files -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="assets/css/plugins.min.css" />
-	<link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+	<link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css'); ?>" />
+	<link rel="stylesheet" href="<?= base_url('assets/css/plugins.min.css'); ?>" />
+	<link rel="stylesheet" href="<?= base_url('assets/css/kaiadmin.min.css'); ?>" />
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="assets/css/demo.css" />
+	<link rel="stylesheet" href="<?= base_url('assets/css/demo.css'); ?>" />
 </head>
 
 <body>
@@ -52,7 +52,7 @@
 				<div class="logo-header" data-background-color="dark">
 					<a href="<?= base_url('dashboard') ?>" class="logo">
 						<img
-							src="assets/img/kaiadmin/logo_light.svg"
+							src="<?= base_url('assets/img/kaiadmin/logo_light.svg'); ?>"
 							alt="navbar brand"
 							class="navbar-brand"
 							height="20" />
@@ -140,7 +140,7 @@
 					<div class="logo-header" data-background-color="dark">
 						<a href="<?= base_url('dashboard') ?>" class="logo">
 							<img
-								src="assets/img/kaiadmin/logo_light.svg"
+								src="<?= base_url('assets/img/kaiadmin/logo_light.svg'); ?>"
 								alt="navbar brand"
 								class="navbar-brand"
 								height="20" />
@@ -228,7 +228,7 @@
 												<a href="#">
 													<div class="notif-img">
 														<img
-															src="assets/img/jm_denis.jpg"
+															src="<?= base_url('assets/img/jm_denis.jpg'); ?>"
 															alt="Img Profile" />
 													</div>
 													<div class="notif-content">
@@ -240,7 +240,7 @@
 												<a href="#">
 													<div class="notif-img">
 														<img
-															src="assets/img/chadengle.jpg"
+															src="<?= base_url('assets/img/chadengle.jpg'); ?>"
 															alt="Img Profile" />
 													</div>
 													<div class="notif-content">
@@ -252,7 +252,7 @@
 												<a href="#">
 													<div class="notif-img">
 														<img
-															src="assets/img/mlane.jpg"
+															src="<?= base_url('assets/img/mlane.jpg'); ?>"
 															alt="Img Profile" />
 													</div>
 													<div class="notif-content">
@@ -266,7 +266,7 @@
 												<a href="#">
 													<div class="notif-img">
 														<img
-															src="assets/img/talha.jpg"
+															src="<?= base_url('assets/img/talha.jpg'); ?>"
 															alt="Img Profile" />
 													</div>
 													<div class="notif-content">
@@ -330,7 +330,7 @@
 												<a href="#">
 													<div class="notif-img">
 														<img
-															src="assets/img/profile2.jpg"
+															src="<?= base_url('assets/img/profile2.jpg'); ?>"
 															alt="Img Profile" />
 													</div>
 													<div class="notif-content">
@@ -440,7 +440,7 @@
 									aria-expanded="false">
 									<div class="avatar-sm">
 										<img
-											src="assets/img/profile.jpg"
+											src="<?= base_url('assets/img/profile.jpg'); ?>"
 											alt="..."
 											class="avatar-img rounded-circle" />
 									</div>
@@ -455,7 +455,7 @@
 											<div class="user-box">
 												<div class="avatar-lg">
 													<img
-														src="assets/img/profile.jpg"
+														src="<?= base_url('assets/img/profile.jpg'); ?>"
 														alt="image profile"
 														class="avatar-img rounded" />
 												</div>
