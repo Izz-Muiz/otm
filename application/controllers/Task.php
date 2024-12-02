@@ -5,7 +5,9 @@ class Task extends CI_Controller
 {
 	public function add()
 	{
+		$this->load->view('templates/header');
 		$this->load->view('task/add');
+		$this->load->view('templates/footer');
 	}
 
 	public function edit()
