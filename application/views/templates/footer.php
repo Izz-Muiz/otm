@@ -1,6 +1,102 @@
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<footer class="footer">
+	<div class="container-fluid d-flex justify-content-between">
+		<nav class="pull-left">
+			<!-- <ul class="nav">
+				<li class="nav-item">
+					<a class="nav-link" href="http://www.themekita.com">
+						ThemeKita
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#"> Help </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#"> Licenses </a>
+				</li>
+			</ul> -->
+		</nav>
+		<!-- <div class="copyright">
+			2024, made with <i class="fa fa-heart heart text-danger"></i> by
+			<a href="http://www.themekita.com">ThemeKita</a>
+		</div> -->
+		<div>
+			Distributed by
+			<a target="_blank" href="#">Muizz</a>
+		</div>
+	</div>
+</footer>
+</div>
+
+</div>
+<!--   Core JS Files   -->
+<script src="assets/js/core/jquery-3.7.1.min.js"></script>
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+
+<!-- jQuery Scrollbar -->
+<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+<!-- Chart JS -->
+<script src="assets/js/plugin/chart.js/chart.min.js"></script>
+
+<!-- jQuery Sparkline -->
+<script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+<!-- Chart Circle -->
+<script src="assets/js/plugin/chart-circle/circles.min.js"></script>
+
+<!-- Datatables -->
+<script src="assets/js/plugin/datatables/datatables.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+<!-- jQuery Vector Maps -->
+<script src="assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+<script src="assets/js/plugin/jsvectormap/world.js"></script>
+
+<!-- Sweet Alert -->
+<script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+<!-- Kaiadmin JS -->
+<script src="assets/js/kaiadmin.min.js"></script>
+
+<!-- Kaiadmin DEMO methods, don't include it in your project! -->
+<!-- <script src="assets/js/demo.js"></script> -->
+<!-- <script>
+	$("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
+		type: "line",
+		height: "70",
+		width: "100%",
+		lineWidth: "2",
+		lineColor: "#177dff",
+		fillColor: "rgba(23, 125, 255, 0.14)",
+	});
+
+	$("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
+		type: "line",
+		height: "70",
+		width: "100%",
+		lineWidth: "2",
+		lineColor: "#f3545d",
+		fillColor: "rgba(243, 84, 93, .14)",
+	});
+
+	$("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
+		type: "line",
+		height: "70",
+		width: "100%",
+		lineWidth: "2",
+		lineColor: "#ffa534",
+		fillColor: "rgba(255, 165, 52, .14)",
+	});
+</script> -->
+<script>
+	$(document).ready(function() {
+		$("#basic-datatables").DataTable({});
+	});
+</script>
+
 </body>
 
 </html>

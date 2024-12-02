@@ -47,9 +47,9 @@ class Auth extends CI_Controller
 
 		$data['validation_errors'] = validation_errors();
 
-		$this->load->view('templates/header');
+		$this->load->view('templates/auth/header');
 		$this->load->view('auth/login', $data);
-		$this->load->view('templates/footer');
+		$this->load->view('templates/auth/footer');
 	}
 
 
@@ -90,8 +90,8 @@ class Auth extends CI_Controller
 
 		$data['validation_errors'] = validation_errors();
 
-		$this->load->view('templates/header');
+		$this->load->view('templates/auth/header');
 		$this->load->view('auth/register', $data);
-		$this->load->view('templates/footer');
+		$this->load->view('templates/auth/footer');
 	}
 }
