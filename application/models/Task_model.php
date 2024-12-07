@@ -17,6 +17,9 @@ class Task_model extends CI_Model
 		return $query->num_rows();
 	}
 
-	public function addTask() {}
+	public function addTask($data)
+	{
+		return $this->db->insert('tasks', $data);
+	}
 	public function updateTask($id) {}
 }
