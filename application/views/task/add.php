@@ -17,59 +17,76 @@
 						<div class="card-title">Add New Task</div>
 					</div>
 					<div class="card-body">
-						<form>
+						<form method="post">
+							<input type="hidden" name="user_id" value="<?= $this->session->userdata('user_id'); ?>">
 							<div class="form-group">
-								<label for="taskTitle">Task Title</label>
-								<input type="text" class="form-control" id="taskTitle" placeholder="Enter Task Title" required>
+								<label for="title">Task Title</label>
+								<input type="text" class="form-control" id="title" placeholder="Enter Task Title" name="title">
+								<div class="form-text text-danger">
+									<?php echo form_error('title'); ?>
+								</div>
 							</div>
 
 							<div class="form-group">
-								<label for="taskDescription">Description</label>
-								<textarea class="form-control" id="taskDescription" rows="3" placeholder="Enter Task Description" required></textarea>
+								<label for="description">Description</label>
+								<textarea class="form-control" id="description" rows="3" placeholder="Enter Task Description" name="description"></textarea>
+								<div class="form-text text-danger">
+									<?php echo form_error('description'); ?>
+								</div>
 							</div>
 
 							<div class="form-group">
-								<label for="dueDate">Due Date</label>
-								<input type="date" class="form-control" id="dueDate" required>
+								<label for="due_date">Due Date</label>
+								<input type="date" class="form-control" id="due_date" name="due_date">
+								<div class="form-text text-danger">
+									<?php echo form_error('due_date'); ?>
+								</div>
 							</div>
 
 							<div class="form-group">
 								<label>Priority</label><br>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="priority" id="priorityLow" value="low">
-									<label class="form-check-label" for="priorityLow">Low</label>
+								<div class="form-text text-danger">
+									<?php echo form_error('priority'); ?>
 								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="priority" id="priorityMedium" value="medium" checked>
-									<label class="form-check-label" for="priorityMedium">Medium</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="priority" id="priorityHigh" value="high">
-									<label class="form-check-label" for="priorityHigh">High</label>
-								</div>
+								<?php foreach ($priority_options as $option => $label) : ?>
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" name="priority" id="priority<?= $option; ?>" value="<?= $option; ?>">
+										<label class="form-check-label" for="priority<?= $option ?>"><?= $label; ?></label>
+									</div>
+								<?php endforeach ?>
 							</div>
 
 							<div class="form-group">
 								<label>Status</label><br>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="status" id="statusPending" value="pending" checked>
-									<label class="form-check-label" for="statusPending">Pending</label>
+								<div class="form-text text-danger">
+									<?php echo form_error('status'); ?>
 								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="status" id="statusCompleted" value="completed">
-									<label class="form-check-label" for="statusCompleted">Completed</label>
-								</div>
+								<?php foreach ($status_options as $option => $label) : ?>
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" name="status" id="status<?= $option; ?>" value="<?= $option; ?>">
+										<label class="form-check-label" for="status<?= $option ?>"><?= $label; ?></label>
+									</div>
+								<?php endforeach ?>
 							</div>
 
 							<div class="form-group">
 								<label for="categorySelect">Category</label>
-								<select class="form-select" id="categorySelect" required>
+								<div class="form-text text-danger">
+									<?php echo form_error('category'); ?>
+								</div>
+								<select class="form-select" id="categorySelect" name="category" required onchange="toggleCustomCategoryInput()">
 									<option value="" disabled selected>Select Category</option>
-									<option value="work">Work</option>
-									<option value="personal">Personal</option>
-									<option value="custom">Custom</option>
+									<?php foreach ($category_options as $value => $label): ?>
+										<option value="<?php echo $value; ?>"><?php echo $label; ?></option>
+									<?php endforeach; ?>
 								</select>
+								<br>
+								<div id="customCategoryDiv" style="display: none;">
+									<label for="customCategory">Custom Category</label>
+									<input type="text" class="form-control" id="customCategory" name="customCategory" placeholder="Enter custom category">
+								</div>
 							</div>
+
 
 							<div class="card-action mt-3">
 								<button type="submit" class="btn btn-success">Save Task</button>
@@ -82,3 +99,16 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	function toggleCustomCategoryInput() {
+		var categorySelect = document.getElementById('categorySelect');
+		var customCategoryDiv = document.getElementById('customCategoryDiv');
+
+		if (categorySelect.value === 'custom') {
+			customCategoryDiv.style.display = 'block';
+		} else {
+			customCategoryDiv.style.display = 'none';
+		}
+	}
+</script>
