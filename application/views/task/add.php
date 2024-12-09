@@ -90,7 +90,7 @@
 
 							<div class="card-action mt-3">
 								<button type="submit" class="btn btn-success">Save Task</button>
-								<button type="button" class="btn btn-danger">Cancel</button>
+								<a href="<?= base_url('dashboard') ?>" class="btn btn-danger">Cancel</a>
 							</div>
 						</form>
 					</div>
