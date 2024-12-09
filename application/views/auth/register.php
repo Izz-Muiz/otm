@@ -51,6 +51,7 @@
 					</div>
 				</div>
 				<button type="submit" class="btn btn-primary">Submit</button>
+				<p class="form-text">Already have an account? <a href="<?php echo site_url('login'); ?>">Login here</a></p>
 			</form>
 		</div>
 	</div>

@@ -42,7 +42,7 @@
 					</div>
 				</div>
 				<button type="submit" class="btn btn-primary">Login</button>
-				<p class="form-text">Don't have an account? <a href="<?php echo site_url('auth/register'); ?>">Register here</a></p>
+				<p class="form-text">Don't have an account? <a href="<?php echo site_url('register'); ?>">Register here</a></p>
 			</form>
 		</div>
 	</div>
